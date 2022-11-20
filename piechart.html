@@ -1,0 +1,39 @@
+<!-- make a pie chart -->
+<!-- add animation -->
+<!-- show data on pie -->
+<div><canvas id="myChart" height="400"></canvas></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/chart.js-plugin-labels-dv/dist/chartjs-plugin-labels.min.js
+"></script>
+<script>
+	const ctx=document.getElementById('myChart');
+	new Chart(ctx,{
+		type:'pie',
+		data:{
+			labels:['red','blue','yellow'],
+			datasets:[{
+				label:'# of votes',
+				data:[300,50,100],
+				backgroundColor:['red','blue','yellow'],
+				hoverOffset:4,
+			}]
+		},
+		options:{
+			animation:{
+				duration:5000,
+			},
+			responsive:true,
+			maintainAspectRatio:false,
+			plugins:{
+				labels:{
+					render:(args)=>{
+						return args.label
+					},
+					fontSize:18,
+					fontColor:'#fff',
+				},
+
+			},
+		}
+	});
+</script>
