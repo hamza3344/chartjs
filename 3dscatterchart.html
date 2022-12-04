@@ -1,0 +1,35 @@
+<!-- 3d scatter chart -->
+<head>
+	<script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+</head>
+<body>
+	<div id='myDiv'></div>
+</body>
+<script>
+	var trac1={
+		x:[1,2,3,4],
+		y:[0.121607854,1.670849337,0.671663712,0.985942302,-0.115243084],
+		z:[-0.067815693,0.389506443,0.676541754,1.756579077,-0.958695113],
+		mode:'markers',
+		marker:{
+			size:12,
+			line:{
+				color: 'rbga(217,217,217,0.14)',
+				width:'0.5',
+			},
+			opacity:'0.8',
+		},
+		type:'scatter3d',
+	};
+	var data=[trac1];
+	var layout ={
+		margin:{
+			l:0,
+			r:0,
+			b:0,
+			t:0,
+		}
+	};
+	var config={responsive:true};
+	Plotly.newPlot('myDiv',data,layout,config);
+	</script>
