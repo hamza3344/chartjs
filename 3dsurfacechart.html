@@ -1,0 +1,30 @@
+<!-- make a 3D surface chart -->
+<head>
+	<script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+</head>
+<body>
+	<div id="myDiv"></div>
+</body>
+<script>
+	const surface_data=[
+	[27.80985,27.71966,30.4267,16.66549,8.815617],/*y=0*/
+	[49.61936,48.55022,33.47752,30.1086,18.3516]/*y=1*/,
+	[0,0,0,0,0]
+
+	];
+	var data=[{
+		z:surface_data,
+		type:'surface'
+	}];
+	var layout={
+		title:'rpractis',
+		margin:{
+			l:65,
+			r:50,
+			b:65,
+			t:90,
+		}
+	};
+	var config={responsive:true};
+	Plotly.newPlot('myDiv',data,layout,config);
+	</script>
