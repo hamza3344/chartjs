@@ -1,0 +1,33 @@
+<!-- 3D cone making -->
+<head>
+	<script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+</head>
+<body>
+	<div id='myDiv' ></div>
+</body>
+<script>
+	var data=[{
+		type:'cone',
+		x:[1,2,3],
+		y:[1,2,3],
+		z:[1,2,3],
+		u:[1,0,0],
+		v:[0,3,0],
+		w:[0,0,2],
+		sizemode:"absolute",
+		sizeref:2,
+		anchor:"tip",
+		colorscale:'Bluered',
+	}];
+	var layout={
+		scene:{
+			camera:{
+				eye:{
+					x:-1.57,y:1.36,z:0.58
+				}
+			}
+		}
+	};
+	var config={responsive:true};
+	Plotly.newPlot('myDiv',data,layout,config);
+</script>
