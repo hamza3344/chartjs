@@ -1,0 +1,24 @@
+<!-- 2D Histogram -->
+<head>
+	<script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+</head>
+<body>
+	<div id='mydiv'></div>
+</body>
+<script>
+	var x=[];
+	var y=[];
+	for(var i=0;i<200;i++)
+	{
+		x[i]=Math.random();
+		y[i]=Math.random() * 2;
+	}
+	var data=[{
+		x:x,
+		y:y,
+		colorscale: 'Blues'
+		,type: 'histogram2dcontour'
+	}];
+	var layout={};
+	Plotly.newPlot('mydiv',data,layout,{responsive:true});
+</script>
