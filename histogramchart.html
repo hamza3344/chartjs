@@ -1,0 +1,21 @@
+<!-- Histogram -->
+<head>
+	<script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+</head>
+<body>
+	<div id='mydiv'></div>
+</body>
+<script>
+	var x=[];
+	for(var i=0;i<200;i++)
+	{
+		x[i]=Math.random();
+		console.log(x[i]);
+	}
+	var data=[{
+		x:x,
+		type:'histogram',
+	}];
+	var layout={bargap:0.05,};
+	Plotly.newPlot('mydiv',data,layout,{responsive:true});
+</script>
